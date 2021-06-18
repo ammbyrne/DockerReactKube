@@ -10,7 +10,7 @@ script:
   - docker run -e CI=true dev-docker-react-kube npm run test -- --coverage
 
 deploy:
-  provider: "elasticbeanstalk"
+  provider: elasticbeanstalk
   region: "ap-southeast-1"
   app: "dev-docker-react-kube"
   env: "Devdockerreactkube-env"
