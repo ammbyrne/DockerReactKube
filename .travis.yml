@@ -9,3 +9,15 @@ before_install:
 script:
   - docker run -e CI=true dev-docker-react-kube npm run test -- --coverage
 
+deploy:
+  provider: elasticbeanstalk
+  region: ap-souteast-1
+  app: "dev-docker-react-kube"
+  env: "Devdockerreactkube-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-080354175868"
+  bucket_path: "dev-docker-react-kube"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
