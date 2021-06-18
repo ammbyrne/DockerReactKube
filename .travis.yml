@@ -7,5 +7,5 @@ before_install:
   - docker build -t dev-docker-react-kube -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true dev-docker-react-kube npm run test
+  - docker run -e CI=true dev-docker-react-kube npm run test -- --coverage
 
